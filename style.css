@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=DM+Mono:wght@400;500&display=swap');
 
 :root {
@@ -1139,5 +1138,114 @@ footer {
     opacity: 1;
     transform: none;
     filter: none;
+  }
+}
+
+/* Education section */
+
+.education-section {
+  padding-top: 90px !important;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.education-card {
+  position: relative;
+  padding: 26px 23px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .92);
+  box-shadow: var(--shadow);
+  transition: transform .4s var(--ease), box-shadow .4s var(--ease),
+    border-color .3s;
+}
+
+.education-card:nth-child(2) {
+  background: linear-gradient(145deg, #fff, #fcf0f8);
+}
+
+.education-card:nth-child(3) {
+  background: linear-gradient(145deg, #fff, #f0eaff);
+}
+
+.education-card:hover {
+  transform: translateY(-6px);
+  border-color: #d3bdec;
+  box-shadow: 0 22px 48px rgba(77, 48, 110, .12);
+}
+
+.education-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  background: var(--lilac);
+  font-size: 23px;
+}
+
+.education-level {
+  margin-bottom: 8px;
+  color: var(--purple);
+  font: 10px "DM Mono", monospace;
+  letter-spacing: 1px;
+}
+
+.education-card h3 {
+  margin-bottom: 9px;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.education-place {
+  min-height: 45px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.education-score {
+  margin-top: 18px;
+  color: var(--purple-dark);
+  font: 600 35px/1.2 "Playfair Display", serif;
+}
+
+.education-score span {
+  font: 600 15px "DM Sans", sans-serif;
+}
+
+.education-note {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+@media (max-width: 900px) {
+  .education-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .education-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 650px) {
+  .education-section {
+    padding-top: 65px !important;
+  }
+
+  .education-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .education-card:last-child {
+    grid-column: auto;
   }
 }
